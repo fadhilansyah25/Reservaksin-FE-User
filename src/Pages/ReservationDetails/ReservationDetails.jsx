@@ -20,13 +20,12 @@ export default function ReservationDetails() {
     headIcon: <></>,
   });
   const navigate = useNavigate();
-  console.log(dataBooking);
 
   // code your handle functions below ...
   const cancelToAPI = async () => {
     await axios
       .patch(
-        `https://reservaksin-be.herokuapp.com/booking/status/${dataBooking?.booking_id}`,
+        `${process.env.REACT_APP_RESERVAKSIN_API_URL}/booking/status/${dataBooking?.booking_id}`,
         {
           status: "canceled",
         }

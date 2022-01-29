@@ -23,7 +23,7 @@ export default function ReservationCekLokasi() {
 
   const getHealthFacilitiesLoc = async () => {
     await fetch(
-      `https://reservaksin-be.herokuapp.com/health-facilities/maps-place`,
+      `${process.env.REACT_APP_RESERVAKSIN_API_URL}/health-facilities/maps-place`,
       { method: "GET" }
     )
       .then((response) => response.text())
