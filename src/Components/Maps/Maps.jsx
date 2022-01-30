@@ -82,7 +82,7 @@ function StaticMarker({ position, placeName, zoom }) {
         })
       }
     >
-      {zoom > 13 ? (
+      {zoom > 12 ? (
         <Tooltip
           interactive={true}
           permanent={true}

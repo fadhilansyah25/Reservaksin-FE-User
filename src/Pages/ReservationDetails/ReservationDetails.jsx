@@ -20,6 +20,7 @@ export default function ReservationDetails() {
     headIcon: <></>,
   });
   const navigate = useNavigate();
+  console.log(dataBooking);
 
   // code your handle functions below ...
   const cancelToAPI = async () => {
@@ -73,6 +74,13 @@ export default function ReservationDetails() {
       ),
     });
     await cancelToAPI();
+  };
+
+  const directToGmaps = () => {
+    window.open(
+      `https://www.google.com/maps/search/?api=1&query=${dataBooking?.session?.health_facilities?.current_Address?.lat},${dataBooking?.session?.health_facilities?.current_Address?.lng}`,
+      "_blank"
+    );
   };
 
   return (
@@ -132,6 +140,14 @@ export default function ReservationDetails() {
             <small>{dataBooking?.session?.health_facilities?.no_telp}</small>
           </div>
         </div>
+        {dataBooking?.status === "booked" ? (
+          <button
+            className="btn btn-primary w-100 shadow-sm mt-3"
+            onClick={directToGmaps}
+          >
+            Cek Lokasi Di Google Maps
+          </button>
+        ) : null}
       </div>
       {dataBooking?.status === "booked" ? (
         <button

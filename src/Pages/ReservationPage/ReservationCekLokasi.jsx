@@ -4,7 +4,7 @@ import { useNavigate, createSearchParams } from "react-router-dom";
 
 import Maps from "Components/Maps/Maps";
 import BackButton from "Components/BackButton/BackButton";
-import axios from "axios";
+// import axios from "axios";
 
 export default function ReservationCekLokasi() {
   // declare new state or new variable below ...
